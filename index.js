@@ -142,7 +142,7 @@ app.post('/register', async (req, res) => {
   
     try {
       // Check if the username already exists in the database
-      const checkQuery = 'SELECT COUNT(*) AS count FROM users WHERE username = :username';
+      const checkQuery = 'SELECT * FROM users WHERE username = :username';
       const checkBindParams = { username };
       const checkResult = await runQuery(checkQuery, checkBindParams);
   
